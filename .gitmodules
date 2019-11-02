@@ -1,6 +1,6 @@
-[submodule "vendor/boost_beast"]
-	path = vendor/boost_beast
-	url = https://github.com/boostorg/beast.git
 [submodule "vendor/ffmpeg"]
 	path = vendor/ffmpeg
 	url = https://github.com/FFmpeg/FFmpeg.git
+[submodule "vendor/boost"]
+	path = vendor/boost
+	url = https://github.com/boostorg/boost.git
