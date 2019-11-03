@@ -19,20 +19,20 @@ class GoPro
 
 		const std::string GetCameraStatus();
 
-		void TakePicture();
+		void ControlShutter(const GoProShutter::Shutter shutterProp);
 
-		void SetResolution(GoProResolution::Resolution new_resolution);
-		void SetFrameRate();
-		void SetFOV();
-		void SetOrientation();
-		void SetMode(GoProMode::Mode new_mode);
+		void SetResolution(const GoProResolution::Resolution resolutionProp);
+		void SetFrameRate(const GoProFrameRate::FrameRate frameRateProp);
+		void SetFOV(const GoProFOV::FOV fovProp);
+		void SetOrientation(const GoProOrientation::Orientation orientationProp);
+		void SetMode(const GoProMode::Mode modeProp);
 
-		void SetLCDLock();
-		void SetLCDTimeout();
-		void SetAutoOff();
+		void SetLCDLock(const GoProLCDLock::LCDLock lcdLockProp);
+		void SetLCDTimeout(const GoProLCDTimeout::LCDTimeout lcdTimeoutProp);
+		void SetAutoOff(const GoProAutoOff::AutoOff autoOffProp);
 
-		void SetLEDBlinkInterval();
-		void SetBeeps();
+		void SetLEDBlinkInterval(const GoProLEDBlinkInterval::LEDBlinkInterval ledBlinkIntervalProp);
+		void SetBeeps(const GoProBeepProperty::Beep beepProp);
 		
 	private:
 

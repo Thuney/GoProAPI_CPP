@@ -12,53 +12,68 @@ const std::string GoPro::GetCameraStatus()
 	return std::string();
 }
 
-void GoPro::TakePicture()
+void GoPro::ControlShutter(const GoProShutter::Shutter shutterProp)
 {
-
+	GoProShutter shutter_property;
+	std::string response = GoProPropertyCommand(shutter_property, shutterProp).Submit();
 }
 
-void GoPro::SetResolution(GoProResolution::Resolution new_resolution)
+void GoPro::SetResolution(const GoProResolution::Resolution resolutionProp)
 {
 	GoProResolution resolution_property;
-	GoProPropertyCommand(resolution_property, new_resolution).Submit();
+	std::string response = GoProPropertyCommand(resolution_property, resolutionProp).Submit();
 }
 
-void GoPro::SetFrameRate()
+void GoPro::SetFrameRate(const GoProFrameRate::FrameRate frameRateProp)
 {
+	GoProFrameRate frame_rate_property;
+	std::string response = GoProPropertyCommand(frame_rate_property, frameRateProp).Submit();
 }
 
-void GoPro::SetFOV()
+void GoPro::SetFOV(const GoProFOV::FOV fovProp)
 {
+	GoProFOV fov_property;
+	std::string response = GoProPropertyCommand(fov_property, fovProp).Submit();
 }
 
-void GoPro::SetOrientation()
+void GoPro::SetOrientation(const GoProOrientation::Orientation orientationProp)
 {
+	GoProOrientation orientation_property;
+	std::string response = GoProPropertyCommand(orientation_property, orientationProp).Submit();
 }
 
-void GoPro::SetMode(GoProMode::Mode new_mode)
+void GoPro::SetMode(const GoProMode::Mode new_mode)
 {
 	GoProMode mode_property;
 	std::string response = GoProPropertyCommand(mode_property, new_mode).Submit();
-	std::cout << response << std::endl;
-
 }
 
-void GoPro::SetLCDLock()
+void GoPro::SetLCDLock(const GoProLCDLock::LCDLock lcdLockProp)
 {
+	GoProLCDLock lcd_lock_property;
+	std::string response = GoProPropertyCommand(lcd_lock_property, lcdLockProp).Submit();
 }
 
-void GoPro::SetLCDTimeout()
+void GoPro::SetLCDTimeout(const GoProLCDTimeout::LCDTimeout lcdTimeoutProp)
 {
+	GoProLCDTimeout lcd_timeout_property;
+	std::string response = GoProPropertyCommand(lcd_timeout_property, lcdTimeoutProp).Submit();
 }
 
-void GoPro::SetAutoOff()
+void GoPro::SetAutoOff(const GoProAutoOff::AutoOff autoOffProp)
 {
+	GoProAutoOff auto_off_property;
+	std::string response = GoProPropertyCommand(auto_off_property, autoOffProp).Submit();
 }
 
-void GoPro::SetLEDBlinkInterval()
+void GoPro::SetLEDBlinkInterval(const GoProLEDBlinkInterval::LEDBlinkInterval ledBlinkIntervalProp)
 {
+	GoProLEDBlinkInterval led_blink_interval_property;
+	std::string response = GoProPropertyCommand(led_blink_interval_property, ledBlinkIntervalProp).Submit();
 }
 
-void GoPro::SetBeeps()
+void GoPro::SetBeeps(const GoProBeepProperty::Beep beepProp)
 {
+	GoProBeepProperty beep_property;
+	std::string response = GoProPropertyCommand(beep_property, beepProp).Submit();
 }

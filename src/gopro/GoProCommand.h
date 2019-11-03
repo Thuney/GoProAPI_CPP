@@ -29,6 +29,10 @@ class GoProCommand
 		static const std::string& m_Prefix;
 };
 
+// Generic command for executing a command on any GoProProperty,
+// given an instance of that property and an enum value that allows
+// the command suffix to be determined
+
 class GoProPropertyCommand : public GoProCommand
 {
 	public:
