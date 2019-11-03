@@ -118,11 +118,11 @@ class GoProStatus : public GoProProperty
 
 			switch ((Status) prop)
 			{
-			case STATUS:
-				command_suffix = "";
-				break;
-			default:
-				command_suffix = nullptr;
+				case STATUS:
+					command_suffix = "";
+					break;
+				default:
+					command_suffix = nullptr;
 			}
 
 			return command_suffix;
@@ -188,7 +188,7 @@ class GoProResolution : public GoProProperty
 		{
 			std::string command_suffix;
 
-			switch ( (Resolution) prop )
+			switch ((Resolution) prop)
 			{
 				case RESOLUTION_4K:
 					command_suffix = "/2/1";
@@ -322,7 +322,7 @@ class GoProMode : public GoProProperty
 		{
 			std::string command_suffix;
 
-			switch ( (Mode) prop )
+			switch ((Mode) prop)
 			{
 				case VIDEO:
 					command_suffix = "?p=0";
