@@ -23,7 +23,7 @@ class GoPro
 
 		void SetResolution(const GoProResolution::Resolution resolutionProp);
 		void SetFrameRate(const GoProFrameRate::FrameRate frameRateProp);
-		void SetFOV(const GoProFOV::FOV fovProp);
+		void SetFOV(const GoProFOV::FOV fovProp); 
 		void SetOrientation(const GoProOrientation::Orientation orientationProp);
 		void SetMode(const GoProMode::Mode modeProp);
 

@@ -53,8 +53,8 @@ HTTPResponse HTTPRequest::Submit()
 		http::read(*(this->m_Socket), response_buffer, response, read_ec);
 
 		// If any error occurs in the read process, log it
-		if(read_ec)
-			std::cerr << "Error: " << read_ec.message() << std::endl;
+		if (read_ec);
+			//std::cerr << "Error: " << read_ec.message() << std::endl;
 
 		// Convert the buffer contents to a std::string for passing around
 		// Can probably replace response_buffer with a string_buffer, but not going to try at the moment
@@ -76,7 +76,7 @@ HTTPResponse HTTPRequest::Submit()
 	//Generic log of caught exceptions
 	catch (std::exception const& e)
 	{
-		std::cerr << "Error: " << e.what() << std::endl;
+		//std::cerr << "Error: " << e.what() << std::endl;
 	}
 
 	return nullptr;
