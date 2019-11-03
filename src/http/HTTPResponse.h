@@ -6,19 +6,24 @@ class HTTPResponse
 {
 	public:
 
-		HTTPResponse(std::ostream* response_stream)
+		HTTPResponse(const std::string& response_data)
 		{
-			this->m_ResponseStream = response_stream;
+			this->m_ResponseData = response_data;
 		};
 
 		~HTTPResponse()
 		{
-			delete this->m_ResponseStream;
+
 		};
+
+		std::string GetResponseData()
+		{
+			return this->m_ResponseData;
+		}
 
 	private:
 
-		std::ostream* m_ResponseStream;
+		std::string m_ResponseData;
 
 
 };
