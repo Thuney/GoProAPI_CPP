@@ -23,5 +23,4 @@ class HTTPResponse
 
 		std::string m_ResponseData;
 
-
 };

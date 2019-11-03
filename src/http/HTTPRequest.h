@@ -1,11 +1,9 @@
 #pragma once
 
 #include <string>
-#include <iostream>
 
 // boost::beast depends on boost::asio,
 // so boost:asio headers must come first
-#include <boost/asio/connect.hpp>
 #include <boost/asio/ip/tcp.hpp>
 
 #include <boost/beast/http.hpp>
@@ -16,13 +14,6 @@ namespace beast	= boost::beast;				// From <boost/beast.hpp>
 namespace http	= beast::http;				// From <boost/beast/http.hpp>
 namespace net	= boost::asio;				// From <boost/asio.hpp>
 using tcp		= net::ip::tcp;				// From <boost/asio/ip/tcp.hpp>
-
-
-// Forward declarations
-net::io_context;
-tcp::resolver;
-tcp::socket;
-http::request<http::empty_body>;
 
 
 enum class HTTPMethod
@@ -42,13 +33,9 @@ class HTTPRequest
 	public:
 
 		HTTPRequest(const std::string& hostname, const std::string& port, const std::string& target, const HTTPMethod method = HTTPMethod::GET, const int version = 11)
+					: m_Hostname(hostname), m_Port(port), m_Target(target)
 		{
-			this->m_Hostname = hostname;
-			this->m_Port	 = port;
-			this->m_Target	 = target;
-
 			this->m_Method   = method;
-
 			this->m_Version  = version;
 
 			Init();
@@ -65,7 +52,7 @@ class HTTPRequest
 
 	private:
 
-		std::string m_Hostname, m_Port, m_Target;
+		const std::string& m_Hostname, &m_Port, &m_Target;
 		HTTPMethod m_Method;
 		int m_Version;
 

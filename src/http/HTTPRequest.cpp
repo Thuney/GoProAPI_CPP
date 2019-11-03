@@ -1,5 +1,12 @@
 #include "HTTPRequest.h"
 
+#include <iostream>
+#include <string>
+
+// boost::beast depends on boost::asio,
+// so boost:asio headers must come first
+#include <boost/asio/connect.hpp>
+
 #include <boost/beast/version.hpp>
 #include <boost/beast/core.hpp>
 
