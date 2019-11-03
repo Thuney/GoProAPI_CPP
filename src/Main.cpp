@@ -8,7 +8,9 @@ int main(int argc, char** argv)
 	int version = 11;
 
 	HTTPRequest request(host, port, target, HTTPMethod::GET, version);
-	request.Submit();
+	HTTPResponse response = request.Submit();
+
+	std::cout << response.ToString() << std::endl;
 
 	return 0;
 }

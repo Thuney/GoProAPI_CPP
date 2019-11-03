@@ -1,7 +1,5 @@
 #pragma once
 
-#include <iostream>
-
 class HTTPResponse
 {
 	public:
@@ -16,7 +14,7 @@ class HTTPResponse
 
 		};
 
-		std::string GetResponseData()
+		std::string ToString()
 		{
 			return this->m_ResponseData;
 		}
