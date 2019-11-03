@@ -78,4 +78,6 @@ HTTPResponse HTTPRequest::Submit()
 	{
 		std::cerr << "Error: " << e.what() << std::endl;
 	}
+
+	return nullptr;
 }

@@ -1,29 +1,42 @@
 #pragma once
 
-#include <string>
+#include "GoProCategories.h"
 
 class GoProCommand
 {
 
 	public:
 
-		GoProCommand(const std::string& command_type, const std::string& control_type, const std::string& suffix)
-					 : m_CommandType(command_type), m_ControlType(control_type), m_Suffix(suffix)
+		GoProCommand()
 		{
-
+			
 		}
 
 		~GoProCommand();
 
-		void Submit();
+		std::string Submit();
+
+	protected:
+
+		GoPro_CommandType::CommandType m_CommandType = GoPro_CommandType::None;
+		GoPro_ControlType::ControlType m_ControlType = GoPro_ControlType::None;
+		std::string m_Suffix = "";
 
 	private:
 
 		static const std::string& m_URL;
 		static const std::string& m_Port;
 		static const std::string& m_Prefix;
+};
 
-		const std::string& m_CommandType;
-		const std::string& m_ControlType;
-		const std::string& m_Suffix;
+class GoProPropertyCommand : public GoProCommand
+{
+	public:
+
+		GoProPropertyCommand(GoProProperty& prop_obj, const int prop)
+		{
+			this->m_CommandType = prop_obj.m_CommandType;
+			this->m_ControlType = prop_obj.m_ControlType;
+			this->m_Suffix		= prop_obj.AsCommandSuffix(prop);
+		}
 };
