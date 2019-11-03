@@ -17,7 +17,7 @@ class GoPro
 
 		};
 
-		const std::string GetCameraStatus();
+		const std::string GetCameraStatus(const GoProStatus::Status statusProp);
 
 		void ControlShutter(const GoProShutter::Shutter shutterProp);
 

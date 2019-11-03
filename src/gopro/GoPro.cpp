@@ -7,9 +7,14 @@ void GoPro::Init()
 
 }
 
-const std::string GoPro::GetCameraStatus()
+const std::string GoPro::GetCameraStatus(const GoProStatus::Status statusProp)
 {
-	return std::string();
+	GoProStatus status_property;
+	std::string response = GoProPropertyCommand(status_property, statusProp).Submit();
+
+	std::cout << response << std::endl;
+
+	return response;
 }
 
 void GoPro::ControlShutter(const GoProShutter::Shutter shutterProp)

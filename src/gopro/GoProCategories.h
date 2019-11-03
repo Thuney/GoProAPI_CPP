@@ -97,6 +97,38 @@ class GoProProperty
 		GoPro_ControlType::ControlType m_ControlType = GoPro_ControlType::None;
 };
 
+class GoProStatus : public GoProProperty
+{
+	public:
+
+		enum Status
+		{
+			STATUS
+		};
+
+		GoProStatus()
+		{
+			this->m_CommandType = GoPro_CommandType::CommandType::CameraControl;
+			this->m_ControlType = GoPro_ControlType::ControlType::CameraStatus;
+		}
+
+		virtual const std::string AsCommandSuffix(const int prop) override
+		{
+			std::string command_suffix;
+
+			switch ((Status) prop)
+			{
+			case STATUS:
+				command_suffix = "";
+				break;
+			default:
+				command_suffix = nullptr;
+			}
+
+			return command_suffix;
+		}
+};
+
 class GoProShutter : public GoProProperty
 {
 	public:
